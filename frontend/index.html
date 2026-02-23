@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Wisdom Bot</title>
+
+    <!-- KaTeX CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Highlight.js CSS for Code Blocks -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css"
+        id="highlight-theme">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2><i class="fa-solid fa-robot"></i> Wisdomizer</h2>
+            </div>
+
+            <div class="settings-group">
+                <label>Model Engine</label>
+                <div class="select-wrapper">
+                    <select id="model-selector">
+                        <option value="Groq">Llama 3 (Groq)</option>
+                        <option value="Gemini">Gemini 1.5 Pro</option>
+                        <option value="Claude">Claude 3 Haiku</option>
+                        <option value="OpenAI">OpenAI (GPT-4o Mini)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="settings-group">
+                <label>Mode Selection</label>
+                <div class="mode-toggle">
+                    <button class="mode-btn active" data-mode="Smart Auto">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i> Smart Auto
+                    </button>
+                    <button class="mode-btn" data-mode="Math Solver">
+                        <i class="fa-solid fa-calculator"></i> Math Solver
+                    </button>
+                    <button class="mode-btn" data-mode="Wikipedia Search">
+                        <i class="fa-brands fa-wikipedia-w"></i> Wiki Search
+                    </button>
+                </div>
+            </div>
+
+            <div class="sidebar-footer">
+                <button id="clear-chat-btn" class="action-btn"><i class="fa-solid fa-trash-can"></i> Clear Chat</button>
+                <button id="theme-toggle-btn" class="action-btn"><i class="fa-solid fa-sun"></i> Light Mode</button>
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="chat-container">
+            <header class="chat-header">
+                <h1 id="current-mode-title">Smart Math Assistant</h1>
+                <p id="current-mode-desc">Powered by Groq & Auto-Routing</p>
+            </header>
+
+            <div class="chat-history" id="chat-history">
+                <!-- Chat messages will be injected here -->
+                <div class="message bot-message">
+                    <div class="avatar"><i class="fa-solid fa-robot"></i></div>
+                    <div class="content">
+                        <p>Hi, I'm your premium Math Assistant! How can I help you today?</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-area">
+                <div class="input-box">
+                    <textarea id="user-input" placeholder="Ask a math problem or factual question..."
+                        rows="1"></textarea>
+                    <button id="send-btn" class="send-btn"><i class="fa-solid fa-paper-plane"></i></button>
+                </div>
+                <div class="input-footer">Press <strong>Enter</strong> to send, <strong>Shift+Enter</strong> for
+                    strictly new line.</div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <!-- KaTeX JS -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
